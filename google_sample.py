@@ -11,6 +11,7 @@ import bisect
 # For a first try we assume that the array is sorted.
 #
 
+
 def find_summands(arr: List[int], target_sum: int) -> Tuple[int, int] | None:
     for i in range(len(arr) - 1):
         if arr[i] > target_sum:
@@ -18,7 +19,7 @@ def find_summands(arr: List[int], target_sum: int) -> Tuple[int, int] | None:
 
         b = target_sum - arr[i]
 
-        leg = arr[i + 1:]
+        leg = arr[i + 1 :]
         idx = bisect.bisect_left(leg, b)
         if idx < len(leg) and leg[idx] == b:
             return arr[i], b
@@ -29,6 +30,7 @@ def find_summands(arr: List[int], target_sum: int) -> Tuple[int, int] | None:
 #
 # Assume now that the array is not sorted, and we don;t want to sort it.
 #
+
 
 def find_summands_unordered(arr: List[int], target_sum: int) -> Tuple[int, int] | None:
     possible_targets = set()

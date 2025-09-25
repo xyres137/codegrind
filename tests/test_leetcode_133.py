@@ -1,16 +1,14 @@
 from typing import List
-from leetcode.leetcode_133 import _parse_adjacency_list, _to_adjacency_list, clone_with_dfs
+from leetcode.leetcode_133 import (
+    _parse_adjacency_list,
+    _to_adjacency_list,
+    clone_with_dfs,
+)
 
 import pytest
 
 
-@pytest.mark.parametrize(
-    "adj_list", [
-        [[2, 4], [1, 3], [2, 4], [1, 3]],
-        [[]],
-        []
-    ]
-)
+@pytest.mark.parametrize("adj_list", [[[2, 4], [1, 3], [2, 4], [1, 3]], [[]], []])
 def test_clone_has_same_adjacency_list(adj_list: List[List[int]]):
     graph = _parse_adjacency_list(adj_list)
     if graph:
@@ -19,4 +17,3 @@ def test_clone_has_same_adjacency_list(adj_list: List[List[int]]):
         clone_adj_list = _to_adjacency_list(node_clone[1])
 
         assert adj_list == clone_adj_list
-

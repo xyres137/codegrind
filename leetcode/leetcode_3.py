@@ -22,7 +22,7 @@ def get_maximal_substrings(s: str) -> Set[str]:
         else:
             words.add(word)
             start = seen[s[i]] + 1
-            word = s[start:i + 1]
+            word = s[start : i + 1]
             seen[s[i]] = i
 
         i += 1
