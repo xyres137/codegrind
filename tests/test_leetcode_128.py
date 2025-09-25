@@ -1,5 +1,5 @@
 from typing import List, Dict, Tuple
-from leetcode_128 import get_consecutive_subsequences
+from leetcode.leetcode_128 import get_consecutive_subsequences
 import random
 
 import pytest
